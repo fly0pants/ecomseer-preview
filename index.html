@@ -1,0 +1,519 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="description" content="EcomSeer AI 海外获客系统公司介绍">
+  <meta name="theme-color" content="#090909">
+  <link rel="canonical" href="https://miaozhisheng.tech/ecomseer">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <title>EcomSeer｜AI 海外获客系统</title>
+  <style>
+    :root{
+      --black:#000;
+      --ink:#101114;
+      --gray:#6e6e73;
+      --light:#f5f5f7;
+      --line:#d2d2d7;
+      --white:#fff;
+      --blue:#0071e3;
+      --cyan:#35c5f0;
+      --green:#30d158;
+      --orange:#ff9f0a;
+      --purple:#7c3aed;
+    }
+    *{box-sizing:border-box}
+    html,body{width:100%;height:100%;margin:0;overflow:hidden;background:#090909;color:var(--ink);font-family:"PingFang SC","Microsoft YaHei","Helvetica Neue",Arial,sans-serif}
+    button{font:inherit}
+    .app{position:relative;width:100%;height:100%;display:grid;place-items:center;background:radial-gradient(circle at 85% 15%,#06264a 0,transparent 30%),#090909}
+    .deck{position:relative;width:min(100vw,calc(100vh * 16 / 9));height:min(100vh,calc(100vw * 9 / 16));overflow:hidden;background:var(--white);box-shadow:0 32px 110px rgba(0,0,0,.58)}
+    .slide{position:absolute;inset:0;display:none;background:var(--white);overflow:hidden}
+    .slide.active{display:block;animation:enter .35s ease-out}
+    .slide.dark{background:radial-gradient(circle at 86% 22%,rgba(0,113,227,.28),transparent 35%),linear-gradient(135deg,#000 0,#111216 70%,#001d3b 100%);color:var(--white)}
+    .slide.soft{background:var(--light)}
+    @keyframes enter{from{opacity:.2;transform:translateX(12px)}to{opacity:1;transform:none}}
+    .frame{height:100%;padding:4.8% 5.6% 4.5%;display:flex;flex-direction:column}
+    .top{display:flex;align-items:center;height:5%;font-size:clamp(10px,.9vw,15px);font-weight:700;letter-spacing:.05em;color:var(--gray)}
+    .dark .top{color:#a1a1a6}.brand{color:var(--ink)}.dark .brand{color:var(--white)}.page{margin-left:auto;font-variant-numeric:tabular-nums}
+    .hero{flex:1;display:flex;flex-direction:column;justify-content:center}
+    .kicker{margin:0 0 1.6%;font-size:clamp(12px,1.1vw,18px);font-weight:750;letter-spacing:.12em;color:var(--blue)}
+    .dark .kicker{color:#58a8ff}
+    h1{margin:0;font-size:clamp(36px,4.1vw,70px);line-height:1.08;letter-spacing:-.055em;font-weight:750}
+    h2{margin:0;font-size:clamp(27px,3.05vw,51px);line-height:1.12;letter-spacing:-.045em;font-weight:750}
+    .lead{margin:1.7% 0 0;max-width:82%;font-size:clamp(14px,1.4vw,23px);line-height:1.6;color:var(--gray)}
+    .dark .lead{color:#b7b7bc}
+    .accent{color:var(--blue)}.dark .accent{color:#58a8ff}.green{color:var(--green)}.orange{color:var(--orange)}
+    .cover-value{display:grid;grid-template-columns:repeat(3,1fr);margin-top:5%;border-top:1px solid #333;border-bottom:1px solid #333}
+    .cover-value>div{padding:3.2% 4%;border-left:1px solid #333}.cover-value>div:first-child{border-left:0;padding-left:0}
+    .cover-value strong{display:block;font-size:clamp(18px,1.8vw,31px);line-height:1.2}.cover-value span{display:block;margin-top:10px;color:#a1a1a6;font-size:clamp(10px,.95vw,16px);line-height:1.45}
+    .cover-note{margin:3.2% 0 0;color:#c7c7cc;font-size:clamp(12px,1.15vw,19px);font-weight:650}
+    .intro-grid{flex:1;display:grid;grid-template-columns:1.04fr .96fr;gap:7%;align-items:center}
+    .statement{padding:7%;border-radius:32px;background:var(--light)}
+    .statement b{display:block;margin-bottom:5%;color:var(--blue);font-size:clamp(12px,1.1vw,18px)}
+    .statement p{margin:0;font-size:clamp(20px,2.1vw,35px);line-height:1.38;font-weight:650}
+    .outcomes{display:grid;gap:8%}.outcome{padding-bottom:7%;border-bottom:1px solid var(--line)}.outcome:last-child{border-bottom:0}
+    .outcome span{color:var(--blue);font-weight:800}.outcome h3{margin:2% 0;font-size:clamp(18px,1.7vw,28px)}.outcome p{margin:0;color:var(--gray);font-size:clamp(12px,1.05vw,17px);line-height:1.55}
+    .three{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:4%;align-items:center}
+    .three article{min-height:58%;padding:0 5%;border-left:1px solid var(--line)}.three article:first-child{border-left:0;padding-left:0}
+    .num{font-size:clamp(36px,4.4vw,72px);line-height:1;color:#b6b6bb;font-weight:750;font-variant-numeric:tabular-nums}.three article:first-child .num{color:var(--blue)}
+    .three h3{margin:10% 0 5%;font-size:clamp(19px,1.85vw,31px);line-height:1.25}.three p{margin:0;color:var(--gray);font-size:clamp(12px,1.1vw,18px);line-height:1.65}
+    .takeaway{margin-top:auto;padding:1.9% 2.5%;border-left:4px solid var(--blue);background:#eef6ff;font-size:clamp(13px,1.2vw,20px);font-weight:650}
+    .step-list{flex:1;display:grid;grid-template-columns:repeat(5,1fr);align-items:center;position:relative;margin-top:1%}
+    .step-list:before{content:"";position:absolute;left:7%;right:7%;top:39%;height:2px;background:var(--line)}
+    .step-item{position:relative;z-index:1;text-align:center;padding:0 5%}
+    .step-item .dot{width:clamp(48px,5vw,82px);aspect-ratio:1;margin:0 auto 14%;display:grid;place-items:center;border-radius:50%;background:var(--white);border:2px solid var(--line);font-size:clamp(16px,1.5vw,25px);font-weight:800;color:var(--gray)}
+    .step-item:first-child .dot{border-color:var(--blue);color:var(--blue);box-shadow:0 0 0 10px rgba(0,113,227,.08)}
+    .step-item:last-child .dot{border-color:var(--green);color:var(--green)}
+    .step-item h3{margin:0 0 7%;font-size:clamp(16px,1.5vw,25px)}.step-item p{margin:0;color:var(--gray);font-size:clamp(10px,.95vw,16px);line-height:1.55}
+    .agents{flex:1;display:grid;grid-template-columns:1.2fr .8fr;gap:7%;align-items:center}
+    .agent-list{display:grid;gap:0}.agent{display:grid;grid-template-columns:11% 31% 1fr;align-items:center;padding:2.4% 0;border-bottom:1px solid var(--line)}.agent:last-child{border-bottom:0}
+    .agent span{color:var(--blue);font-weight:800;font-variant-numeric:tabular-nums}.agent b{font-size:clamp(15px,1.35vw,23px)}.agent small{color:var(--gray);font-size:clamp(10px,.95vw,16px)}
+    .system-copy{padding:10%;border-radius:32px;background:var(--ink);color:var(--white)}.system-copy strong{display:block;font-size:clamp(26px,3.4vw,58px);line-height:1.05}.system-copy p{margin:8% 0 0;color:#b7b7bc;font-size:clamp(12px,1.15vw,19px);line-height:1.65}
+    .dual{flex:1;display:grid;grid-template-columns:1fr 1fr;gap:4%;align-items:center}
+    .lane{min-height:64%;padding:7%;border-radius:32px;background:var(--light)}.lane.blue{background:#eaf4ff}.lane span{font-weight:800;color:var(--blue)}.lane h3{margin:4% 0 5%;font-size:clamp(23px,2.4vw,41px)}.lane p{margin:0;color:var(--gray);font-size:clamp(12px,1.12vw,19px);line-height:1.65}.lane .path{margin-top:10%;font-weight:700;color:var(--ink);font-size:clamp(11px,1vw,17px)}
+    .package-grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-items:stretch;margin-top:2%}
+    .package{padding:1% 5%;border-left:1px solid var(--line)}.package:first-child{border-left:0;padding-left:0}.package:last-child{padding-right:0}
+    .package-label{display:block;color:var(--blue);font-size:clamp(11px,1vw,17px);font-weight:800}.package h3{margin:3% 0 5%;font-size:clamp(19px,1.75vw,30px)}.price-stack{display:grid;gap:0}.price-line{display:flex;align-items:baseline;justify-content:space-between;gap:4%;padding:2.5% 0;border-bottom:1px solid var(--line);font-size:clamp(9px,.82vw,14px);color:var(--gray)}.price-line strong{color:var(--ink);font-size:clamp(13px,1.15vw,20px);font-variant-numeric:tabular-nums;white-space:nowrap}.package ul{margin:5% 0 0;padding-left:1.25em;color:var(--gray);font-size:clamp(9px,.82vw,14px);line-height:1.48}.package li{margin:2.4% 0}.package .promise{display:block;margin-top:5%;padding:3.2% 4%;background:#eef6ff;color:var(--blue);font-size:clamp(9px,.82vw,14px);font-weight:750;line-height:1.4}.package.ecom .price-line strong{color:var(--blue)}
+    .sources{margin-top:auto;color:var(--gray);font-size:clamp(8px,.72vw,12px);line-height:1.45}.sources a{color:inherit;text-underline-offset:2px}
+    .compare{flex:1;display:grid;grid-template-columns:26% 1fr 1fr;align-content:center}
+    .compare>*{padding:3% 5%;border-bottom:1px solid var(--line);font-size:clamp(11px,1.05vw,17px);line-height:1.4}.compare .head{font-weight:750;color:var(--ink);background:var(--light)}.compare .ours{color:var(--ink);font-weight:650}.compare .old{color:var(--gray)}
+    .compare.market{grid-template-columns:18% 1fr 1fr 1.08fr}.compare.market>*{padding:1.45% 2.4%;font-size:clamp(9px,.82vw,14px);line-height:1.35}.compare.market .ours{background:#eef6ff;color:#0058b0}.compare.market .head.ours{background:#dcebff;color:#004c99}.compare.market .dimension{font-weight:750}
+    .many-map{flex:1;display:grid;grid-template-columns:45% 10% 45%;align-items:center;margin-top:1%}.map-side-label{display:block;margin-bottom:4%;color:var(--gray);font-size:clamp(9px,.8vw,13px);font-weight:800;letter-spacing:.1em}.solution-side .map-side-label{color:var(--blue)}
+    .growth-evidence{flex:1;min-height:0;display:grid;grid-template-columns:1.08fr .92fr;gap:2.6%;align-items:stretch;margin-top:1.8%}.evidence-card{min-height:0;overflow:hidden;display:flex;flex-direction:column;border:1px solid #dedee3;border-radius:24px;background:var(--white);box-shadow:0 14px 38px rgba(0,0,0,.06)}.evidence-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:2%;padding:3.2% 4% 2.7%}.evidence-head span{display:block;margin-bottom:2%;color:var(--blue);font-size:clamp(9px,.8vw,13px);font-weight:800;letter-spacing:.08em}.evidence-head strong{display:block;font-size:clamp(23px,2.15vw,36px);line-height:1.05;letter-spacing:-.035em;font-variant-numeric:tabular-nums}.evidence-head p{margin:0;color:var(--gray);font-size:clamp(10px,.88vw,15px);line-height:1.45;text-align:right}.evidence-card.geo .evidence-head span{color:var(--purple)}.evidence-shot{display:block;flex:1 1 0;width:100%;height:0;min-height:0;object-fit:cover;object-position:top left;border-top:1px solid #e6e6ea;background:#f6f6f7}.evidence-card.geo .evidence-shot{object-position:top center}.traffic-value{margin:1.2% 0 0;padding:1.15% 1.6%;border-left:4px solid var(--green);background:#effbf2;color:#246637;font-size:clamp(10px,.9vw,15px);font-weight:700;line-height:1.45}.traffic-value strong{color:#0b7a32;font-size:1.15em;font-variant-numeric:tabular-nums}
+    .pain-cloud{display:grid;grid-template-columns:1fr 1fr;gap:5% 3%}.pain-bubble{position:relative;padding:7% 8%;border:1px solid #dedee3;border-radius:22px;background:var(--white);box-shadow:0 9px 26px rgba(0,0,0,.045);font-size:clamp(11px,1.02vw,17px);font-weight:700;line-height:1.38}.pain-bubble:after{content:"";position:absolute;left:20%;bottom:-9px;border-width:9px 9px 0 0;border-style:solid;border-color:#dedee3 transparent transparent transparent}.pain-bubble:nth-child(2n){transform:translateY(12%)}.pain-bubble:nth-child(3n){transform:translateX(6%)}
+    .converge{display:grid;place-items:center;color:var(--blue)}.converge strong{display:grid;place-items:center;width:clamp(46px,5vw,80px);aspect-ratio:1;border-radius:50%;background:#dcebff;font-size:clamp(24px,2.6vw,44px)}.converge span{margin-top:12%;color:var(--gray);font-size:clamp(8px,.7vw,12px);font-weight:700;text-align:center;line-height:1.35}
+    .solution-stack{display:grid;gap:5%}.solution-block{padding:5% 6%;border-left:4px solid var(--blue);border-radius:0 20px 20px 0;background:#eaf4ff}.solution-block b{display:block;color:#0058b0;font-size:clamp(15px,1.35vw,23px)}.solution-block p{margin:2.5% 0 0;color:#43617f;font-size:clamp(10px,.9vw,15px);line-height:1.48}
+    .case-strip{display:grid;grid-template-columns:repeat(3,1fr);margin-top:1.5%;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}.case-strip>div{padding:1.3% 3%;border-left:1px solid var(--line)}.case-strip>div:first-child{border-left:0;padding-left:0}.case-strip strong{font-size:clamp(18px,1.7vw,29px);color:var(--blue);font-variant-numeric:tabular-nums}.case-strip span{margin-left:3%;color:var(--gray);font-size:clamp(9px,.8vw,13px)}
+    .metric-row{flex:1;display:grid;grid-template-columns:repeat(3,1fr);align-items:center;margin-top:1%}
+    .metric-block{position:relative;min-height:48%;padding:4% 8%;border-left:1px solid #333;display:flex;flex-direction:column;justify-content:center}.metric-block:first-child{border-left:0;padding-left:0}.metric-block:not(:last-child):after{content:"→";position:absolute;right:-.55em;top:41%;transform:translateY(-50%);z-index:2;color:#555;font-size:clamp(18px,1.8vw,30px);font-weight:400;line-height:1}.metric-block small{color:#6e6e73;font-size:clamp(9px,.8vw,13px);font-weight:800;letter-spacing:.12em}.metric-block strong{display:block;margin-top:9%;font-size:clamp(38px,4.25vw,72px);line-height:1;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.045em}.metric-block span{display:block;margin-top:7%;color:#d1d1d6;font-size:clamp(12px,1.08vw,18px);font-weight:700}.metric-block em{display:block;margin-top:8%;color:#8e8e93;font-size:clamp(10px,.9vw,15px);font-style:normal;line-height:1.45}.metric-block:first-child strong{color:#58a8ff}.metric-block:last-child strong{color:var(--green)}
+    .platform-case{flex:1;min-height:0;display:grid;grid-template-columns:1.08fr .92fr;gap:4%;align-items:stretch;margin-top:2%}.platform-copy{min-height:0;display:flex;flex-direction:column;justify-content:center}.platform-order{padding:5.5% 6%;border:1px solid rgba(255,255,255,.13);border-radius:26px;background:rgba(255,255,255,.07)}.platform-order span{display:block;color:#8e8e93;font-size:clamp(9px,.8vw,13px);font-weight:800;letter-spacing:.12em}.platform-order strong{display:block;margin-top:2%;color:var(--green);font-size:clamp(35px,3.8vw,64px);line-height:1;font-variant-numeric:tabular-nums;letter-spacing:-.04em}.platform-order p{margin:4% 0 0;color:#d1d1d6;font-size:clamp(11px,1vw,17px);line-height:1.55}.platform-points{display:grid;grid-template-columns:repeat(3,1fr);gap:2.2%;margin-top:3%}.platform-point{padding:5% 7%;border-radius:18px;background:rgba(255,255,255,.05)}.platform-point small{display:block;color:#6e6e73;font-size:clamp(8px,.7vw,12px);font-weight:750}.platform-point b{display:block;margin-top:6%;color:#fff;font-size:clamp(12px,1.1vw,18px);line-height:1.35}.platform-quote{margin:3% 0 0;padding:3.5% 5%;border-left:4px solid #58a8ff;background:rgba(0,113,227,.13);color:#c7ddf7;font-size:clamp(10px,.9vw,15px);font-weight:650;line-height:1.5}.chat-case-card{min-height:0;margin:0;padding:2.3%;display:flex;flex-direction:column;border:1px solid rgba(255,255,255,.16);border-radius:24px;background:#f5f5f7;box-shadow:0 18px 48px rgba(0,0,0,.28)}.chat-case-card img{display:block;flex:1 1 0;width:100%;height:0;min-height:0;object-fit:contain;border-radius:14px;background:#fff}.chat-case-card figcaption{padding:2.5% 1% .5%;color:#6e6e73;font-size:clamp(8px,.72vw,12px);font-weight:700;text-align:center}
+    .case03-showcase{flex:1;min-height:0;display:grid;grid-template-columns:1.36fr .64fr;gap:2.6%;align-items:stretch;margin-top:1.6%}.inquiry-evidence{min-height:0;display:grid;grid-template-columns:.68fr 1.32fr;gap:2.6%;align-items:stretch}.inquiry-card{min-height:0;overflow:hidden;display:flex;flex-direction:column;border:1px solid #dedee3;border-radius:24px;background:#fff;box-shadow:0 14px 38px rgba(0,0,0,.07)}.inquiry-head{display:grid;grid-template-columns:1fr auto;align-items:end;gap:3%;padding:3.4% 4.2% 3%}.inquiry-head span{display:block;margin-bottom:2%;color:var(--blue);font-size:clamp(8px,.72vw,12px);font-weight:800;letter-spacing:.08em}.inquiry-head strong{display:block;font-size:clamp(20px,1.95vw,33px);line-height:1.05;letter-spacing:-.025em}.inquiry-head p{margin:0;color:var(--gray);font-size:clamp(9px,.78vw,13px);font-weight:650;line-height:1.4;text-align:right}.inquiry-card.registration .inquiry-head span{color:var(--green)}.inquiry-shot{display:block;flex:1 1 0;width:100%;height:0;min-height:0;object-fit:contain;object-position:top center;border-top:1px solid #e6e6ea;background:#fff}.inquiry-volume{position:relative;min-height:0;overflow:hidden;border:1px solid #d9dfe8;border-radius:24px;background:radial-gradient(circle at 86% 12%,rgba(53,197,240,.18),transparent 35%),linear-gradient(145deg,#eef6ff,#f7fbff 58%,#edf9f1);box-shadow:0 14px 38px rgba(0,79,154,.09)}.volume-head{position:absolute;left:6%;right:6%;top:5%;z-index:10}.volume-head span{display:block;color:var(--blue);font-size:clamp(9px,.82vw,14px);font-weight:800;letter-spacing:.08em}.volume-head strong{display:block;margin-top:2%;font-size:clamp(18px,1.65vw,28px);line-height:1.15}.inquiry-stack{position:absolute;inset:17% 3% 5%;perspective:1100px}.inquiry-stack-card{--x:0px;--y:0px;--r:0deg;--delay:0s;position:absolute;left:50%;top:3%;z-index:1;height:84%;width:auto;border:5px solid #fff;border-radius:14px;background:#fff;box-shadow:0 18px 42px rgba(9,42,72,.22);opacity:0;transform:translate(var(--x),var(--y)) rotate(var(--r));transform-origin:50% 88%;will-change:transform}.inquiry-stack-card.card-one{--x:-182px;--y:18px;--r:-8deg;--delay:.22s;z-index:1}.inquiry-stack-card.card-two{--x:-108px;--y:2px;--r:0deg;--delay:.52s;z-index:2}.inquiry-stack-card.card-three{--x:-34px;--y:18px;--r:8deg;--delay:.82s;z-index:3}.slide.active .inquiry-stack-card{animation:inquiry-card-arrive .58s cubic-bezier(.16,1,.3,1) var(--delay) both}.volume-badge{position:absolute;right:5%;bottom:5%;z-index:12;padding:2.6% 4%;border-radius:999px;background:rgba(0,113,227,.92);color:#fff;font-size:clamp(9px,.78vw,13px);font-weight:800;box-shadow:0 8px 20px rgba(0,75,150,.22);opacity:0}.slide.active .volume-badge{animation:volume-badge-arrive .46s cubic-bezier(.16,1,.3,1) 1.28s both}.volume-langs{display:flex;gap:5px;margin-top:3%}.volume-langs i{padding:3px 7px;border-radius:999px;background:#fff;color:#47708f;font-size:clamp(7px,.58vw,10px);font-style:normal;font-weight:750;box-shadow:0 4px 12px rgba(0,0,0,.05)}.inquiry-value{margin:1.2% 0 0;padding:1.15% 1.6%;border-left:4px solid var(--blue);background:#eef6ff;color:#245b8f;font-size:clamp(10px,.9vw,15px);font-weight:700;line-height:1.45}
+    @keyframes inquiry-card-arrive{0%{opacity:0;transform:translate(calc(var(--x) + 78px),calc(var(--y) + 42px)) rotate(calc(var(--r) + 9deg)) scale(.88)}1%{opacity:1}100%{opacity:1;transform:translate(var(--x),var(--y)) rotate(var(--r)) scale(1)}}
+    @keyframes volume-badge-arrive{0%{opacity:0;transform:translateY(18px) scale(.88)}100%{opacity:1;transform:translateY(0) scale(1)}}
+    .source{margin-top:auto;color:var(--gray);font-size:clamp(9px,.8vw,13px)}.dark .source{color:#8e8e93}
+    .case-grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:4%;align-items:center}.case{min-height:65%;padding:0 5%;border-left:1px solid var(--line)}.case:first-child{border-left:0;padding-left:0}
+    .case small{font-weight:750;color:var(--blue)}.case h3{margin:5% 0 8%;font-size:clamp(20px,2vw,34px)}.case strong{display:block;font-size:clamp(27px,2.9vw,49px);line-height:1.08;color:var(--blue);font-variant-numeric:tabular-nums;letter-spacing:-.035em}.case:nth-child(2) strong{color:var(--orange)}.case:nth-child(3) strong{color:var(--green)}.case p{margin:4% 0;color:var(--gray);font-size:clamp(11px,1vw,17px);line-height:1.55}.case b{display:block;margin-top:8%;font-size:clamp(13px,1.25vw,21px);line-height:1.45}
+    .roadmap{flex:1;display:grid;grid-template-columns:repeat(3,1fr);align-items:stretch;position:relative}.roadmap:before{content:"";position:absolute;left:4%;right:4%;top:32%;height:2px;transform:translateY(-50%);background:var(--line)}.phase{position:relative;z-index:1;display:grid;grid-template-rows:18% 28% auto 1fr;align-items:start;padding:0 7%}.phase small{font-weight:800;color:var(--blue)}.phase:nth-child(2) small{color:var(--orange)}.phase:nth-child(3) small{color:var(--green)}.phase .marker{width:22px;height:22px;margin:0;align-self:center;border-radius:50%;background:var(--blue);box-shadow:0 0 0 9px var(--white)}.phase:nth-child(2) .marker{background:var(--orange)}.phase:nth-child(3) .marker{background:var(--green)}.phase h3{margin:0 0 7%;font-size:clamp(20px,1.9vw,32px)}.phase p{margin:0;color:var(--gray);font-size:clamp(11px,1vw,17px);line-height:1.6}
+    .team{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:4%;align-items:center}.person{min-height:70%;padding:0 5%;border-left:1px solid var(--line)}.person:first-child{border-left:0;padding-left:0}.person h3{margin:0;font-size:clamp(25px,2.5vw,43px)}.person b{display:block;margin:5% 0 7%;color:var(--blue);font-size:clamp(11px,1vw,17px)}.person p{margin:0;color:var(--gray);font-size:clamp(10px,.93vw,15.5px);line-height:1.63}
+    .cta{flex:1;display:grid;grid-template-columns:1.05fr .95fr;gap:6%;align-items:center}.cta h1{font-size:clamp(38px,4.55vw,76px)}.cta-card{padding:9%;border-radius:30px;background:var(--white);color:var(--ink)}.cta-card span{color:var(--gray);font-weight:700}.cta-card strong{display:block;margin:5% 0 9%;font-size:clamp(28px,3vw,50px);font-variant-numeric:tabular-nums}.cta-card p{margin:0;color:var(--gray);font-size:clamp(11px,1vw,17px);line-height:1.6}.contact-card{padding:6%;display:grid;grid-template-columns:.68fr 1fr;gap:8%;align-items:center}.enterprise-wechat strong{margin:5% 0 8%;font-size:clamp(27px,2.7vw,46px)}.contact-hint{display:block;color:var(--blue);font-size:clamp(11px,1vw,17px);font-weight:800;line-height:1.45}.contact-qr{display:block;width:100%;aspect-ratio:1;object-fit:contain;border:1px solid #d2d2d7;border-radius:18px;background:#fff}
+    .controls{position:fixed;right:22px;bottom:22px;z-index:30;display:flex;align-items:center;gap:6px;padding:7px;border-radius:999px;background:rgba(0,0,0,.76);backdrop-filter:blur(16px);box-shadow:0 12px 35px rgba(0,0,0,.35)}.controls button{width:38px;height:38px;border:0;border-radius:50%;background:transparent;color:#fff;cursor:pointer}.controls button:hover:not(:disabled){background:rgba(255,255,255,.13)}.controls button:disabled{opacity:.28}.controls .count{width:auto;min-width:88px;border-radius:999px;font:700 12px/1 ui-monospace,monospace;color:#b7b7bc}
+    .progress{position:fixed;left:0;right:0;bottom:0;height:3px;z-index:32;background:rgba(255,255,255,.09)}.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));transition:width .3s ease}
+    .tip{position:fixed;left:22px;bottom:20px;margin:0;color:#8e8e93;font-size:11px}
+    @media(max-width:768px) and (orientation:portrait){
+      html,body{height:100%;height:100dvh;overscroll-behavior:none}
+      .app{height:100%;height:100dvh;display:block;background:#090909}
+      .deck{width:100vw;height:100%;height:100dvh;box-shadow:none}
+      .slide{overflow-x:hidden;overflow-y:auto;overscroll-behavior-y:contain;-webkit-overflow-scrolling:touch}
+      .slide.active{animation:mobile-enter .28s ease-out}
+      .frame{height:auto;min-height:100%;padding:max(22px,env(safe-area-inset-top)) 20px calc(96px + env(safe-area-inset-bottom))}
+      .top{height:auto;min-height:22px;margin-bottom:28px;font-size:11px}
+      .kicker{margin-bottom:10px;font-size:12px;line-height:1.45}
+      h1{font-size:clamp(38px,11.8vw,58px);line-height:1.08}
+      h2{font-size:clamp(29px,8.3vw,42px);line-height:1.16;letter-spacing:-.04em}
+      .lead{max-width:none;margin-top:14px;font-size:16px;line-height:1.62}
+      .hero{justify-content:flex-start}
+      .cover-value{grid-template-columns:1fr;margin-top:30px}
+      .cover-value>div{padding:18px 0;border-left:0;border-top:1px solid #333}
+      .cover-value>div:first-child{border-top:0}
+      .cover-value strong{font-size:22px}.cover-value span{margin-top:7px;font-size:14px}
+      .cover-note{margin-top:24px;font-size:14px;line-height:1.55}
+      .intro-grid,.agents,.dual,.growth-evidence,.platform-case,.case03-showcase,.cta{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+      .statement,.system-copy,.lane,.platform-order,.cta-card{padding:24px;border-radius:22px}
+      .statement p{font-size:24px}.statement b{font-size:13px}
+      .outcomes{gap:0}.outcome{padding:22px 0}.outcome h3{font-size:22px}.outcome p{font-size:15px}
+      .three,.case-grid,.team,.package-grid,.roadmap{display:grid;grid-template-columns:1fr;gap:0;align-items:start;margin-top:24px}
+      .three article,.case,.person,.package{min-height:0;padding:24px 0;border-left:0;border-top:1px solid var(--line)}
+      .three article:first-child,.case:first-child,.person:first-child,.package:first-child{padding-top:0;border-top:0}
+      .three h3{margin:10px 0 8px;font-size:24px}.three p{font-size:15px}.num{font-size:52px}
+      .takeaway{margin-top:24px;padding:16px 18px;font-size:15px;line-height:1.55}
+      .step-list{display:grid;grid-template-columns:1fr;gap:12px;margin-top:26px}
+      .step-list:before{display:none}
+      .step-item{display:grid;grid-template-columns:54px 1fr;column-gap:14px;align-items:center;padding:14px 0;text-align:left;border-bottom:1px solid var(--line)}
+      .step-item .dot{grid-row:1/3;width:48px;margin:0;font-size:16px}
+      .step-item h3{margin:0 0 4px;font-size:20px}.step-item p{font-size:14px}
+      .agent{grid-template-columns:42px minmax(92px,31%) 1fr;padding:15px 0;gap:6px}.agent b{font-size:17px}.agent small{font-size:13px;line-height:1.45}
+      .system-copy strong{font-size:39px}.system-copy p{font-size:15px}
+      .lane{min-height:0}.lane h3{font-size:28px}.lane p{font-size:15px}.lane .path{margin-top:20px;font-size:14px}
+      .package-grid{margin-top:26px}.package h3{font-size:24px}.package-label{font-size:13px}
+      .price-line{padding:10px 0;font-size:13px}.price-line strong{font-size:15px}.package ul{font-size:13px;line-height:1.6}.package .promise{padding:14px;font-size:13px}
+      .sources,.source{margin-top:24px;font-size:11px;line-height:1.6}
+      .compare.market{display:grid;grid-template-columns:110px repeat(3,minmax(190px,1fr));width:100%;margin-top:24px;overflow-x:auto;overscroll-behavior-x:contain;align-content:start;border:1px solid var(--line);border-radius:16px;-webkit-overflow-scrolling:touch}
+      .compare.market>*{padding:12px 10px;font-size:12px;line-height:1.45}
+      .growth-evidence{margin-top:24px}.evidence-card{border-radius:18px}.evidence-head{padding:18px;align-items:start}.evidence-head strong{font-size:28px}.evidence-head p{font-size:12px}.evidence-shot{flex:none;height:auto;max-height:none;object-fit:contain}
+      .traffic-value,.inquiry-value{margin-top:18px;padding:14px 16px;font-size:13px;line-height:1.55}
+      .case03-showcase{margin-top:24px}.inquiry-evidence{display:grid;grid-template-columns:1fr;gap:20px}.inquiry-card{border-radius:18px}.inquiry-head{padding:17px}.inquiry-head strong{font-size:26px}.inquiry-head p{font-size:11px}.inquiry-shot{flex:none;height:auto;max-height:68vh;object-fit:contain}
+      .inquiry-volume{min-height:430px;border-radius:18px}.volume-head{left:18px;right:18px;top:18px}.volume-head strong{font-size:23px}.inquiry-stack{inset:90px 8px 24px}.inquiry-stack-card{top:4%;height:78%;border-width:4px}.inquiry-stack-card.card-one{--x:-46vw;--y:20px}.inquiry-stack-card.card-two{--x:-29vw;--y:2px}.inquiry-stack-card.card-three{--x:-12vw;--y:20px}.volume-badge{right:16px;bottom:16px;padding:10px 14px;font-size:12px}
+      .case{padding:26px 0}.case h3{margin:8px 0 12px;font-size:25px}.case strong{font-size:38px}.case p{font-size:15px}.case b{margin-top:12px;font-size:18px}
+      .platform-case{margin-top:24px}.platform-order strong{font-size:48px}.platform-order p{font-size:15px}.platform-points{grid-template-columns:1fr;gap:10px;margin-top:14px}.platform-point{padding:15px 18px}.platform-point b{margin-top:4px;font-size:17px}.platform-quote{margin-top:16px;padding:17px;font-size:14px}.chat-case-card{padding:10px;border-radius:18px}.chat-case-card img{flex:none;height:auto;max-height:none}.chat-case-card figcaption{font-size:11px}
+      .roadmap{margin-top:28px}.roadmap:before{display:none}.phase{display:grid;grid-template-columns:14px 1fr;grid-template-rows:auto auto auto;gap:4px 14px;padding:20px 0;border-top:1px solid var(--line)}.phase:first-child{border-top:0;padding-top:0}.phase small,.phase h3,.phase p{grid-column:2}.phase .marker{grid-column:1;grid-row:1/4;width:10px;height:100%;min-height:86px;border-radius:999px;box-shadow:none}.phase h3{margin:4px 0;font-size:24px}.phase p{font-size:15px}
+      .team{margin-top:24px}.person{padding:26px 0}.person h3{font-size:34px}.person b{margin:8px 0 12px;font-size:14px}.person p{font-size:14px;line-height:1.68}
+      .cta{padding-top:6px}.cta h1{font-size:clamp(40px,12vw,58px)}.contact-card{grid-template-columns:minmax(0,1fr) minmax(118px,42%);gap:16px}.enterprise-wechat strong{font-size:28px}.contact-hint{font-size:13px}.contact-qr{border-radius:12px}
+      .controls{left:50%;right:auto;bottom:calc(12px + env(safe-area-inset-bottom));transform:translateX(-50%);gap:4px;padding:6px}
+      .controls button{width:46px;height:46px}.controls .count{min-width:94px}.tip{display:none}
+      .progress{top:0;bottom:auto;height:3px;background:rgba(0,0,0,.1)}
+    }
+    @keyframes mobile-enter{from{opacity:.25;transform:translateX(18px)}to{opacity:1;transform:none}}
+    @media(max-height:620px) and (orientation:landscape){.controls{right:10px;bottom:10px;transform:scale(.84);transform-origin:right bottom}.tip{display:none}}
+    @media(prefers-reduced-motion:reduce){.slide.active{animation:none}.progress i{transition:none}.slide.active .inquiry-stack-card,.slide.active .volume-badge{animation:none;opacity:1}}
+    @media print{html,body{height:auto;overflow:visible;background:#fff}.app{display:block;background:#fff}.deck{width:100%;height:auto;overflow:visible;box-shadow:none}.slide,.slide.active{position:relative;display:block;width:100%;height:auto;aspect-ratio:16/9;page-break-after:always;animation:none}.controls,.progress,.tip{display:none}}
+  </style>
+</head>
+<body>
+<main class="app">
+  <div class="deck" id="deck">
+
+    <section class="slide dark active" data-title="一句话定位" role="region" aria-roledescription="slide" aria-label="第 1 页">
+      <div class="frame">
+        <div class="top"><span class="brand">EcomSeer</span><span class="page">01 / 15</span></div>
+        <div class="hero">
+          <p class="kicker">AI 海外获客系统</p>
+          <h1><span class="accent">AI外贸精准获客</span></h1>
+          <p class="lead">从精准名单、多语种触达到意向识别，向销售团队交付已确认采购意向、可以直接跟进的客户线索。</p>
+          <div class="cover-value">
+            <div><strong>企业情报找客户</strong><span>整合全网公开信息与海关数据，精准定位目标买家</span></div>
+            <div><strong>AI 筛选需求</strong><span>识别产品、数量、市场与采购阶段</span></div>
+            <div><strong>交付销售商机</strong><span>输出采购需求、客户信息与下一步跟进动作</span></div>
+          </div>
+          <p class="cover-note">客户、内容与数据资产持续沉淀在企业自己的增长系统中。</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="我们是谁" role="region" aria-roledescription="slide" aria-label="第 2 页">
+      <div class="frame">
+        <div class="top"><span class="brand">ABOUT</span><span class="page">02 / 15</span></div>
+        <div class="intro-grid">
+          <div>
+            <p class="kicker">北京妙智盛科技 · EcomSeer</p>
+            <h2>我们做的不是工具集合，<br>而是一条<span class="accent">可复盘的获客链路</span></h2>
+            <p class="lead">EcomSeer 连接企业情报、独立站、内容、主动开发与销售结果，帮助企业持续获得高质量海外机会。</p>
+          </div>
+          <div class="statement">
+            <b>客户最终获得</b>
+            <p>自有客户资产<br>合格销售线索（MQL）<br>可持续优化的数据闭环</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide soft" data-title="客户问题" role="region" aria-roledescription="slide" aria-label="第 3 页">
+      <div class="frame">
+        <div class="top"><span class="brand">WHY NOW</span><span class="page">03 / 15</span></div>
+        <p class="kicker">海外增长的真实卡点</p>
+        <h2>企业缺的不是更多渠道，<br>而是把渠道变成结果的能力</h2>
+        <div class="three">
+          <article><div class="num">01</div><h3>客户找不到</h3><p>目标市场、采购角色和真实需求分散在搜索、社媒、邮件与 AI 推荐入口。</p></article>
+          <article><div class="num">02</div><h3>询盘筛不动</h3><p>重复账号、非目标客户和低意向回复消耗大量销售时间，真正商机容易被淹没。</p></article>
+          <article><div class="num">03</div><h3>数据连不起来</h3><p>广告、网站、内容与销售结果各自独立，预算和团队精力难以持续优化。</p></article>
+        </div>
+        <div class="takeaway">EcomSeer 的价值：把“找客户、筛需求、交商机、做复盘”连成同一条增长链路。</div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="五步获客" role="region" aria-roledescription="slide" aria-label="第 4 页">
+      <div class="frame">
+        <div class="top"><span class="brand">HOW IT WORKS</span><span class="page">04 / 15</span></div>
+        <p class="kicker">一眼看懂 EcomSeer</p>
+        <h2>五步，把海量名单变成销售可跟进的合格线索</h2>
+        <p class="lead">合格销售线索（MQL），就是有明确采购意向、符合筛选标准、销售可以直接跟进的客户。</p>
+        <div class="step-list">
+          <div class="step-item"><div class="dot">01</div><h3>找客户</h3><p>用全网企业情报与海关数据建立精准客户池</p></div>
+          <div class="step-item"><div class="dot">02</div><h3>主动触达</h3><p>多语种邮件、社媒与渠道触达目标客户</p></div>
+          <div class="step-item"><div class="dot">03</div><h3>AI 筛选</h3><p>识别产品、数量、市场与采购阶段</p></div>
+          <div class="step-item"><div class="dot">04</div><h3>交付合格线索</h3><p>把采购需求和下一步动作交给销售</p></div>
+          <div class="step-item"><div class="dot">05</div><h3>数据优化</h3><p>用询盘质量与商机推进持续调整投入</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide soft" data-title="产品系统" role="region" aria-roledescription="slide" aria-label="第 5 页">
+      <div class="frame">
+        <div class="top"><span class="brand">THE SYSTEM</span><span class="page">05 / 15</span></div>
+        <div class="agents">
+          <div>
+            <p class="kicker">企业情报数据库 × AI Agent 集群</p>
+            <h2>先找得准，再高效触达海外客户</h2>
+            <div class="agent-list">
+              <div class="agent"><span>AI</span><b>企业情报</b><small>整合全网公开信息、海关数据与企业采购信号</small></div>
+              <div class="agent"><span>AI</span><b>站点增长</b><small>独立站、SEO、GEO 与询盘承接</small></div>
+              <div class="agent"><span>AI</span><b>内容增长</b><small>把客户问题变成可复用的专业内容</small></div>
+              <div class="agent"><span>AI</span><b>客户开发</b><small>精准名单、个性触达与持续跟进</small></div>
+              <div class="agent"><span>AI</span><b>数据洞察</b><small>去重、分级、归因与下一步动作</small></div>
+            </div>
+          </div>
+          <div class="system-copy"><strong>全网数据<br>精准画像<br>Agent 执行</strong><p>企业情报数据库为 AI 提供更完整的目标客户画像；Agent 覆盖多个市场与语言，以更高效率、更低人力成本持续开发客户。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="获客双引擎" role="region" aria-roledescription="slide" aria-label="第 6 页">
+      <div class="frame">
+        <div class="top"><span class="brand">GROWTH ENGINE</span><span class="page">06 / 15</span></div>
+        <p class="kicker">主动 + 被动</p>
+        <h2>既主动找到客户，也让客户持续找到你</h2>
+        <p class="lead">短期验证需求，长期沉淀品牌、内容与自然流量资产。</p>
+        <div class="dual">
+          <article class="lane blue"><span>主动获客</span><h3>从“等询盘”变成主动开发</h3><p>围绕目标市场建立精准名单，多语种触达并持续跟进，AI 自动筛选采购信号。</p><div class="path">名单 → 触达 → 回复 → 合格线索</div></article>
+          <article class="lane"><span>被动发现</span><h3>把独立站变成长期增长入口</h3><p>围绕产品、场景、案例和 FAQ 建立内容资产，让搜索引擎与 AI 推荐持续发现企业。</p><div class="path">内容 → 搜索 / GEO → 信任 → 询盘</div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide soft" data-title="套餐对照" role="region" aria-roledescription="slide" aria-label="第 7 页">
+      <div class="frame">
+        <div class="top"><span class="brand">PACKAGE VIEW</span><span class="page">07 / 15</span></div>
+        <p class="kicker">最低门槛与年度获客保障</p>
+        <h2>平台会员最低 ¥31,100 / 年，EcomSeer ¥1,999 起先验证结果</h2>
+        <div class="package-grid">
+          <article class="package">
+            <span class="package-label">阿里巴巴国际站</span><h3>会员 + AI + 广告推广</h3>
+            <div class="price-stack">
+              <div class="price-line"><span>出口通 AI</span><strong>¥35,800 / 年</strong></div>
+              <div class="price-line"><span>金品诚企 AI</span><strong>¥90,000 / 年</strong></div>
+              <div class="price-line"><span>行业领袖</span><strong>官方询价</strong></div>
+              <div class="price-line"><span>OKKI Leads AI</span><strong>¥5,999 / 年</strong></div>
+              <div class="price-line"><span>直通车 / P4P</span><strong>常见预存 ¥10,000 起</strong></div>
+            </div>
+            <span class="promise">常规会员套餐无固定客户询盘保障；部分新商活动仅保障平台定义的“商机”，不等同客户询盘或订单。</span>
+          </article>
+          <article class="package">
+            <span class="package-label">中国制造网</span><h3>会员 + AI + 按次营销</h3>
+            <div class="price-stack">
+              <div class="price-line"><span>金牌会员</span><strong>¥31,100 / 年</strong></div>
+              <div class="price-line"><span>钻石会员</span><strong>¥59,800 / 年</strong></div>
+              <div class="price-line"><span>AI 麦可标准 / 专业 Lite</span><strong>¥5,980 / 年</strong></div>
+              <div class="price-line"><span>AI 麦可专业版</span><strong>¥9,980 / 年</strong></div>
+              <div class="price-line"><span>AI 速递</span><strong>¥0.3 / 次 · ¥300 起</strong></div>
+            </div>
+            <span class="promise">会员权益、AI 电量与推广资源可叠加购买；AI 速递按营销次数扣费，公开说明未承诺成交。</span>
+          </article>
+          <article class="package ecom">
+            <span class="package-label">EcomSeer</span><h3>企业情报 + Agent 主动获客</h3>
+            <div class="price-stack">
+              <div class="price-line"><span>试用版</span><strong>¥1,999 / 期</strong></div>
+              <div class="price-line"><span>年度获客版</span><strong>¥29,998 / 年</strong></div>
+              <div class="price-line"><span>年度询盘保障</span><strong>100 条 / 年</strong></div>
+              <div class="price-line"><span>进阶方案</span><strong>按市场与线索量配置</strong></div>
+            </div>
+            <ul><li>整合全网公开信息、海关数据等企业情报</li><li>AI Agent 主动寻找、触达、筛选目标客户</li><li>交付合格销售线索，客户与互动记录归企业</li></ul>
+            <span class="promise">年度获客版包含 100 条客户询盘保障；数量、周期与验收口径写入合同</span>
+          </article>
+        </div>
+        <p class="sources">公开信息核对：2026-08-04。会员价格据 2026 年 2 月研报（资料来源含两平台）及平台公开页；实际签约价、活动政策与适用条件以官方报价合同为准。来源：<a href="https://pdf.dfcfw.com/pdf/H3_AP202602131819911959_1.pdf%3F1770970596000.pdf" target="_blank" rel="noreferrer">2026 套餐对照</a>、<a href="https://supplier.alibaba.com/activity/new-member/PX002CQ5L.htm" target="_blank" rel="noreferrer">阿里会员档</a>、<a href="https://supplier.alibaba.com/us/news/PX002CA89.htm" target="_blank" rel="noreferrer">阿里商机保效</a>、<a href="https://supplier.alibaba.com/trade/domestic/PX002D14G.htm" target="_blank" rel="noreferrer">出口通 AI 与推广预存</a>、<a href="https://onetouch.alibaba.com/moBasedata/public/news/contentd1197b25-5187-4492-9a63-2a4ad473d8ed" target="_blank" rel="noreferrer">OKKI Leads 价格</a>、<a href="https://service.made-in-china.com/help/guide/mai/14567.htm" target="_blank" rel="noreferrer">AI 麦可购买指南</a>、<a href="https://service.made-in-china.com/help/guide/bank/8070.htm" target="_blank" rel="noreferrer">AI 速递计费</a>。</p>
+      </div>
+    </section>
+
+    <section class="slide" data-title="竞品对比" role="region" aria-roledescription="slide" aria-label="第 8 页">
+      <div class="frame">
+        <div class="top"><span class="brand">WHY ECOMSEER</span><span class="page">08 / 15</span></div>
+        <p class="kicker">最低投入、结果保障与客户资产对比</p>
+        <h2>¥1,999 起验证获客，年度方案保障 100 条客户询盘</h2>
+        <div class="compare market">
+          <div class="head">对比维度</div><div class="head">阿里巴巴国际站</div><div class="head">中国制造网</div><div class="head ours">EcomSeer</div>
+          <div class="dimension">获客逻辑</div><div class="old">同类商家密集，共同竞争站内搜索、RFQ 与广告流量，询盘线索容易分散</div><div class="old">依靠展示、RFQ 与访客营销</div><div class="ours">AI Agent 主动寻找、触达并筛选目标买家</div>
+          <div class="dimension">数据基础</div><div class="old">平台企业、买家行为与站内数据</div><div class="old">平台买家、RFQ 与会员数据</div><div class="ours">整合全网公开信息、海关数据等企业情报级数据库</div>
+          <div class="dimension">结果承诺</div><div class="old">常规会员无固定客户询盘保障；部分活动仅保障平台定义的“商机”</div><div class="old">AI 速递按营销次数计费；公开权益未见固定成交承诺</div><div class="ours">年度获客版保障 100 条客户询盘 / 年，按合同口径验收</div>
+          <div class="dimension">最低投入</div><div class="old">出口通 AI ¥35,800 / 年；推广与增值工具另计</div><div class="old">金牌会员 ¥31,100 / 年；AI 与营销资源另计</div><div class="ours">试用版 ¥1,999 / 期；年度获客版 ¥29,998 / 年</div>
+          <div class="dimension">客户资产</div><div class="old">流量入口与互动主要依托平台店铺</div><div class="old">展示、RFQ 与买家资源主要在平台体系</div><div class="ours">独立站、客户库、互动与跟进记录归企业</div>
+          <div class="dimension">停止投入后</div><div class="old">会员 / 推广停止会影响站内搜索曝光与流量入口</div><div class="old">会员展示与推广权益会受到影响</div><div class="ours">已沉淀的客户、内容与销售数据可持续使用</div>
+          <div class="dimension">团队效率</div><div class="old">持续上品、优化、投放与人工跟进</div><div class="old">持续更新、RFQ 报价与访客运营</div><div class="ours">Agent 并行覆盖多市场、多语言，减少重复人力</div>
+        </div>
+        <p class="sources">说明：平台“商机”、客户询盘、合格销售线索与订单不是同一口径；阿里保效适用商家及补偿方式以活动合同为准。平台实际效果因行业、产品、运营与投放而异；EcomSeer 年度获客版的 100 条客户询盘保障以双方合同约定的定义、周期与验收口径为准。</p>
+      </div>
+    </section>
+
+    <section class="slide soft" data-title="客户案例一" role="region" aria-roledescription="slide" aria-label="第 9 页">
+      <div class="frame">
+        <div class="top"><span class="brand">CUSTOMER CASE 01</span><span class="page">09 / 15</span></div>
+        <p class="kicker">某汽车零配件企业 · 独立站增长案例</p>
+        <h2>独立站 SEO &amp; GEO 优化效果展示</h2>
+        <p class="lead">自然搜索持续获得曝光与点击，优质内容同时被 AI 搜索平台发现与引用。</p>
+        <div class="growth-evidence">
+          <article class="evidence-card seo">
+            <div class="evidence-head"><div><span>SEO · 自然搜索增长</span><strong>46.1 万次曝光</strong></div><p>2,189 次点击<br>平均排名 8.8</p></div>
+            <img class="evidence-shot" src="assets/case01-auto-parts-seo.png" alt="某汽车零配件独立站 SEO 搜索表现后台截图">
+          </article>
+          <article class="evidence-card geo">
+            <div class="evidence-head"><div><span>GEO · AI 搜索可见度</span><strong>28.5K 次引用</strong></div><p>平均被引用页面<br>31 个</p></div>
+            <img class="evidence-shot" src="assets/case01-auto-parts-geo.png" alt="某汽车零配件独立站 GEO AI 引用表现后台截图">
+          </article>
+        </div>
+        <p class="traffic-value">流量价值估算：2,189 次自然点击 × 约 US$1 / 次，约等于 <strong>US$2,189</strong> 的广告流量价值；SEO 内容与排名还可持续沉淀。</p>
+        <p class="sources">客户名称与业务信息已脱敏 · 数据来自客户独立站 SEO 与 GEO 运营后台</p>
+      </div>
+    </section>
+
+    <section class="slide soft" data-title="客户案例二" role="region" aria-roledescription="slide" aria-label="第 10 页">
+      <div class="frame">
+        <div class="top"><span class="brand">CUSTOMER CASE 02</span><span class="page">10 / 15</span></div>
+        <p class="kicker">精准邮件营销 · 真实采购询盘</p>
+        <h2>精准触达目标买家，获得明确报价与供应商准入机会</h2>
+        <p class="lead">海外客户直接给出采购数量、产品规格和图纸编号，并邀请企业参与大型集团供应商注册流程。</p>
+        <div class="case03-showcase">
+          <div class="inquiry-evidence">
+            <article class="inquiry-card rfq">
+              <div class="inquiry-head"><div><span>RFQ · 报价询盘</span><strong>明确报价需求</strong></div><p>包含型号、图纸号与采购数量</p></div>
+              <img class="inquiry-shot" src="assets/case02-rfq-email.png" alt="精准邮件营销获得的产品报价询盘截图，客户信息已脱敏">
+            </article>
+            <article class="inquiry-card registration">
+              <div class="inquiry-head"><div><strong>Grupo México</strong></div></div>
+              <img class="inquiry-shot" src="assets/case02-supplier-registration.png" alt="Grupo México 邀请企业参与供应商注册流程的邮件截图，敏感信息已脱敏">
+            </article>
+          </div>
+          <aside class="inquiry-volume" aria-label="全球询盘持续进入的聊天列表截图动画">
+            <div class="volume-head">
+              <strong>全球询盘持续进入</strong>
+              <div class="volume-langs"><i>西语</i><i>阿语</i><i>英语</i></div>
+            </div>
+            <div class="inquiry-stack">
+              <img class="inquiry-stack-card card-one" src="assets/case02-chat-volume-01.png" alt="多语种客户询盘聊天列表截图一，客户信息已脱敏">
+              <img class="inquiry-stack-card card-two" src="assets/case02-chat-volume-02.png" alt="多语种客户询盘聊天列表截图二，客户信息已脱敏">
+              <img class="inquiry-stack-card card-three" src="assets/case02-chat-volume-03.png" alt="多语种客户询盘聊天列表截图三，客户信息已脱敏">
+            </div>
+            <div class="volume-badge">询盘持续累积 ↑</div>
+          </aside>
+        </div>
+        <p class="inquiry-value">从精准名单与多语种触达，到报价询盘和供应商准入，AI 营销把冷启动开发转化为销售可直接跟进的采购机会。</p>
+        <p class="sources">客户、邮箱及企业敏感信息已脱敏 · 邮件内容来自精准营销触达后的真实回复</p>
+      </div>
+    </section>
+
+    <section class="slide" data-title="行业案例" role="region" aria-roledescription="slide" aria-label="第 11 页">
+      <div class="frame">
+        <div class="top"><span class="brand">CASES</span><span class="page">11 / 15</span></div>
+        <p class="kicker">跨行业可复制</p>
+        <h2>汽车、小家电与汽配项目均在两周内形成商机</h2>
+        <div class="case-grid">
+          <article class="case"><small>汽车整车出口</small><h3>某头部汽车集团</h3><strong>313 个主动询盘</strong><p>30,998 名目标客户主动营销，持续获得买家回复。</p><b>18 条为高优先级商机</b></article>
+          <article class="case"><small>厨房小家电</small><h3>某制造企业</h3><strong>150 个主动询盘</strong><p>27,958 名目标客户主动营销，覆盖多市场采购需求。</p><b>12 份已完成正式报价</b></article>
+          <article class="case"><small>汽车滤芯</small><h3>某汽配制造企业</h3><strong>160 个主动询盘</strong><p>10,998 名目标客户主动营销，识别明确产品需求。</p><b>15 个高优先询盘</b></article>
+        </div>
+        <p class="source">统计周期：2 周 · 客户与企业信息已脱敏</p>
+      </div>
+    </section>
+
+    <section class="slide dark" data-title="客户案例三" role="region" aria-roledescription="slide" aria-label="第 12 页">
+      <div class="frame">
+        <div class="top"><span class="brand">CUSTOMER CASE 03</span><span class="page">12 / 15</span></div>
+        <p class="kicker">平台推送客户 · 订单转化案例</p>
+        <h2>平台推送精准客户，促成百万级订单</h2>
+        <p class="lead">客户回访确认：平台推荐的买家质量高、采购意向足，并已完成百万级订单落地。</p>
+        <div class="platform-case">
+          <div class="platform-copy">
+            <div class="platform-order">
+              <span>成交结果</span>
+              <strong>百万级订单</strong>
+              <p>平台主动筛选并推送目标客户，帮助制造企业减少低质量询盘，把销售精力集中到更明确的采购机会。</p>
+            </div>
+            <div class="platform-points">
+              <div class="platform-point"><small>客户来源</small><b>平台精准推送</b></div>
+              <div class="platform-point"><small>客户质量</small><b>普遍较高</b></div>
+              <div class="platform-point"><small>采购意向</small><b>明确且充足</b></div>
+            </div>
+            <blockquote class="platform-quote">“刚敲定了一笔百万级别的订单，就是平台推荐来的客户。”</blockquote>
+          </div>
+          <figure class="chat-case-card">
+            <img src="assets/case03-platform-order-chat.png" alt="平台推送客户促成百万级订单的回访对话截图，头像及敏感信息已脱敏">
+            <figcaption>客户回访对话截图 · 头像及敏感信息已脱敏</figcaption>
+          </figure>
+        </div>
+        <p class="source">客户与企业信息已脱敏 · 案例内容经客户授权用于对外展示</p>
+      </div>
+    </section>
+
+    <section class="slide" data-title="落地路径" role="region" aria-roledescription="slide" aria-label="第 13 页">
+      <div class="frame">
+        <div class="top"><span class="brand">DELIVERY</span><span class="page">13 / 15</span></div>
+        <p class="kicker">90 天最小闭环</p>
+        <h2>先验证一个重点市场，再打通多渠道增长闭环</h2>
+        <p class="lead">从市场验证到全渠道承接，再把已经跑通的增长模型规模化复制。</p>
+        <div class="roadmap">
+          <article class="phase"><small>0-30 天</small><div class="marker"></div><h3>市场验证</h3><p>明确目标国家、ICP 与产品卖点，完成首轮渠道测试和客户对话验证。</p></article>
+          <article class="phase"><small>31-60 天</small><div class="marker"></div><h3>全渠道承接</h3><p>打通独立站、社媒、邮件等触点，联动主动开发与被动获客，统一客户标签与销售跟进。</p></article>
+          <article class="phase"><small>61-90 天</small><div class="marker"></div><h3>规模化复制</h3><p>复盘线索质量、触达与成交数据，把验证有效的客户画像、内容与渠道组合复制到更多市场。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide soft" data-title="创业团队" role="region" aria-roledescription="slide" aria-label="第 14 页">
+      <div class="frame">
+        <div class="top"><span class="brand">TEAM</span><span class="page">14 / 15</span></div>
+        <p class="kicker">CORE TEAM · 阿里巴巴 / 字节跳动 / TikTok / 快手</p>
+        <h2>曾构建百亿级平台，也曾亲历全球电商从 0 到 1</h2>
+        <div class="team">
+          <article class="person"><h3>侯永干</h3><b>全球化增长 × 产品技术</b><p>北京大学研究生。横跨阿里巴巴、快手与 TikTok 核心业务，历经淘宝海外营销增长、快手直播基础设施及 TikTok 欧洲区合规治理。具备从增长战略、产品设计到大规模系统落地的复合能力。</p></article>
+          <article class="person"><h3>赵克农</h3><b>百亿级云平台 × 全球电商</b><p>曾任阿里巴巴技术专家、字节跳动高级专家。参与打造稳定承载百亿级终端在线的阿里云物联网平台；参与 Global E-Commerce 初始团队从 0 到 1，打通招商、选品、建站、投放与全球大促保障链路。</p></article>
+          <article class="person"><h3>陈振钊</h3><b>大型平台架构 × 工程落地</b><p>北京理工大学计算机硕士，前阿里巴巴技术专家。历经阿里云、飞猪、高德地图等核心业务，深耕云计算及出行 / 交易系统架构，擅长将复杂业务转化为可规模化、可持续演进的工程体系。</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide dark" data-title="合作交流" role="region" aria-roledescription="slide" aria-label="第 15 页">
+      <div class="frame">
+        <div class="top"><span class="brand">NEXT STEP</span><span class="page">15 / 15</span></div>
+        <div class="cta">
+          <div><p class="kicker">从一个重点市场开始</p><h1>验证你的<br><span class="accent">海外增长机会</span></h1><p class="lead">市场与客户画像诊断 · 首轮渠道验证 · 90 天增长闭环方案</p></div>
+          <aside class="cta-card contact-card">
+            <div class="enterprise-wechat">
+              <span>商务咨询</span>
+              <strong>企业微信</strong>
+              <small class="contact-hint">扫码添加企业微信</small>
+            </div>
+            <img class="contact-qr" src="assets/contact-hou-wechat-qr.png" alt="EcomSeer 企业微信二维码">
+          </aside>
+        </div>
+      </div>
+    </section>
+
+  </div>
+  <nav class="controls" aria-label="演示导航">
+    <button id="prev" aria-label="上一页">←</button>
+    <button class="count" id="count" aria-label="进入或退出全屏">01 / 15</button>
+    <button id="next" aria-label="下一页">→</button>
+  </nav>
+  <div class="progress" aria-hidden="true"><i id="progress"></i></div>
+  <p class="tip">← → / 空格翻页 · 点击页码全屏 · 支持触控滑动</p>
+</main>
+<script>
+  (()=>{
+    const slides=[...document.querySelectorAll('.slide')];
+    const prev=document.getElementById('prev');
+    const next=document.getElementById('next');
+    const count=document.getElementById('count');
+    const progress=document.getElementById('progress');
+    let index=Math.max(0,Math.min(slides.length-1,(Number(location.hash.slice(1))||1)-1)),locked=false,touchX=0,touchY=0;
+    function render(){
+      slides.forEach((slide,i)=>{
+        slide.classList.toggle('active',i===index);
+        slide.setAttribute('aria-hidden',i===index?'false':'true');
+      });
+      count.textContent=`${String(index+1).padStart(2,'0')} / ${String(slides.length).padStart(2,'0')}`;
+      progress.style.width=`${((index+1)/slides.length)*100}%`;
+      prev.disabled=index===0;
+      next.disabled=index===slides.length-1;
+      document.title=`EcomSeer｜${slides[index].dataset.title}`;
+    }
+    function go(nextIndex){index=Math.max(0,Math.min(slides.length-1,nextIndex));render()}
+    prev.addEventListener('click',()=>go(index-1));
+    next.addEventListener('click',()=>go(index+1));
+    count.addEventListener('click',()=>document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen?.());
+    addEventListener('keydown',event=>{
+      if(['ArrowRight','ArrowDown',' ','PageDown'].includes(event.key)){event.preventDefault();go(index+1)}
+      if(['ArrowLeft','ArrowUp','PageUp'].includes(event.key)){event.preventDefault();go(index-1)}
+      if(event.key==='Home')go(0);
+      if(event.key==='End')go(slides.length-1);
+    });
+    addEventListener('wheel',event=>{
+      if(locked||Math.abs(event.deltaY)<12)return;
+      locked=true;go(index+(event.deltaY>0?1:-1));setTimeout(()=>locked=false,420);
+    },{passive:true});
+    addEventListener('touchstart',event=>{touchX=event.changedTouches[0].screenX;touchY=event.changedTouches[0].screenY},{passive:true});
+    addEventListener('touchend',event=>{
+      const touch=event.changedTouches[0],dx=touch.screenX-touchX,dy=touch.screenY-touchY;
+      if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)*1.25)go(index+(dx<0?1:-1));
+    },{passive:true});
+    render();
+  })();
+</script>
+</body>
+</html>
