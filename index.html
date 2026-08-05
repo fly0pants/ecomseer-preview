@@ -74,6 +74,7 @@
     .package-grid{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:0;align-items:stretch;margin-top:2%}
     .package{padding:1% 5%;border-left:1px solid var(--line)}.package:first-child{border-left:0;padding-left:0}.package:last-child{padding-right:0}
     .package-label{display:block;color:var(--blue);font-size:clamp(11px,1vw,17px);font-weight:800}.package h3{margin:3% 0 5%;font-size:clamp(19px,1.75vw,30px)}.price-stack{display:grid;gap:0}.price-line{display:flex;align-items:baseline;justify-content:space-between;gap:4%;padding:2.5% 0;border-bottom:1px solid var(--line);font-size:clamp(9px,.82vw,14px);color:var(--gray)}.price-line strong{color:var(--ink);font-size:clamp(13px,1.15vw,20px);font-variant-numeric:tabular-nums;white-space:nowrap}.package ul{margin:5% 0 0;padding-left:1.25em;color:var(--gray);font-size:clamp(9px,.82vw,14px);line-height:1.48}.package li{margin:2.4% 0}.package .promise{display:block;margin-top:5%;padding:3.2% 4%;background:#eef6ff;color:var(--blue);font-size:clamp(9px,.82vw,14px);font-weight:750;line-height:1.4}.package.ecom .price-line strong{color:var(--blue)}
+    .pricing-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4%;margin:1.7% 0 1.2%}.pricing-stat{padding:2.1% 2.5%;border:1px solid var(--line);border-radius:18px;background:var(--white)}.pricing-stat small{display:block;color:var(--gray);font-size:clamp(8px,.72vw,12px);font-weight:750}.pricing-stat strong{display:block;margin-top:2%;font-size:clamp(20px,2vw,34px);line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}.pricing-stat span{display:block;margin-top:3%;color:var(--gray);font-size:clamp(8px,.72vw,12px);line-height:1.35}.pricing-stat.ours{border-color:#9fcaff;background:linear-gradient(135deg,#eaf4ff,#f6fbff)}.pricing-stat.ours small,.pricing-stat.ours strong{color:#0058b0}.pricing-stat.ours span{color:#376b9d}.pricing-stat .advantage{display:inline-block;margin-top:3%;padding:3px 8px;border-radius:999px;background:#d9f7e3;color:#147a36;font-weight:800}
     .sources{margin-top:auto;color:var(--gray);font-size:clamp(8px,.72vw,12px);line-height:1.45}.sources a{color:inherit;text-underline-offset:2px}
     .compare{flex:1;display:grid;grid-template-columns:26% 1fr 1fr;align-content:center}
     .compare>*{padding:3% 5%;border-bottom:1px solid var(--line);font-size:clamp(11px,1.05vw,17px);line-height:1.4}.compare .head{font-weight:750;color:var(--ink);background:var(--light)}.compare .ours{color:var(--ink);font-weight:650}.compare .old{color:var(--gray)}
@@ -136,6 +137,7 @@
       .lane{min-height:0}.lane h3{font-size:28px}.lane p{font-size:15px}.lane .path{margin-top:20px;font-size:14px}
       .package-grid{margin-top:26px}.package h3{font-size:24px}.package-label{font-size:13px}
       .price-line{padding:10px 0;font-size:13px}.price-line strong{font-size:15px}.package ul{font-size:13px;line-height:1.6}.package .promise{padding:14px;font-size:13px}
+      .pricing-summary{grid-template-columns:1fr;margin:24px 0 12px;gap:12px}.pricing-stat{padding:18px;border-radius:16px}.pricing-stat small{font-size:12px}.pricing-stat strong{font-size:28px}.pricing-stat span{font-size:12px}
       .sources,.source{margin-top:24px;font-size:11px;line-height:1.6}
       .compare.market{display:grid;grid-template-columns:110px repeat(3,minmax(190px,1fr));width:100%;margin-top:24px;overflow-x:auto;overscroll-behavior-x:contain;align-content:start;border:1px solid var(--line);border-radius:16px;-webkit-overflow-scrolling:touch}
       .compare.market>*{padding:12px 10px;font-size:12px;line-height:1.45}
@@ -164,7 +166,7 @@
 
     <section class="slide dark active" data-title="一句话定位" role="region" aria-roledescription="slide" aria-label="第 1 页">
       <div class="frame">
-        <div class="top"><span class="brand">EcomSeer</span><span class="page">01 / 15</span></div>
+        <div class="top"><span class="brand">EcomSeer</span><span class="page">01 / 14</span></div>
         <div class="hero">
           <p class="kicker">AI 海外获客系统</p>
           <h1><span class="accent">AI外贸精准获客</span></h1>
@@ -181,7 +183,7 @@
 
     <section class="slide" data-title="我们是谁" role="region" aria-roledescription="slide" aria-label="第 2 页">
       <div class="frame">
-        <div class="top"><span class="brand">ABOUT</span><span class="page">02 / 15</span></div>
+        <div class="top"><span class="brand">ABOUT</span><span class="page">02 / 14</span></div>
         <div class="intro-grid">
           <div>
             <p class="kicker">北京妙智盛科技 · EcomSeer</p>
@@ -198,7 +200,7 @@
 
     <section class="slide soft" data-title="客户问题" role="region" aria-roledescription="slide" aria-label="第 3 页">
       <div class="frame">
-        <div class="top"><span class="brand">WHY NOW</span><span class="page">03 / 15</span></div>
+        <div class="top"><span class="brand">WHY NOW</span><span class="page">03 / 14</span></div>
         <p class="kicker">海外增长的真实卡点</p>
         <h2>企业缺的不是更多渠道，<br>而是把渠道变成结果的能力</h2>
         <div class="three">
@@ -212,7 +214,7 @@
 
     <section class="slide" data-title="五步获客" role="region" aria-roledescription="slide" aria-label="第 4 页">
       <div class="frame">
-        <div class="top"><span class="brand">HOW IT WORKS</span><span class="page">04 / 15</span></div>
+        <div class="top"><span class="brand">HOW IT WORKS</span><span class="page">04 / 14</span></div>
         <p class="kicker">一眼看懂 EcomSeer</p>
         <h2>五步，把海量名单变成销售可跟进的合格线索</h2>
         <p class="lead">合格销售线索（MQL），就是有明确采购意向、符合筛选标准、销售可以直接跟进的客户。</p>
@@ -228,7 +230,7 @@
 
     <section class="slide soft" data-title="产品系统" role="region" aria-roledescription="slide" aria-label="第 5 页">
       <div class="frame">
-        <div class="top"><span class="brand">THE SYSTEM</span><span class="page">05 / 15</span></div>
+        <div class="top"><span class="brand">THE SYSTEM</span><span class="page">05 / 14</span></div>
         <div class="agents">
           <div>
             <p class="kicker">企业情报数据库 × AI Agent 集群</p>
@@ -248,7 +250,7 @@
 
     <section class="slide" data-title="获客双引擎" role="region" aria-roledescription="slide" aria-label="第 6 页">
       <div class="frame">
-        <div class="top"><span class="brand">GROWTH ENGINE</span><span class="page">06 / 15</span></div>
+        <div class="top"><span class="brand">GROWTH ENGINE</span><span class="page">06 / 14</span></div>
         <p class="kicker">主动 + 被动</p>
         <h2>既主动找到客户，也让客户持续找到你</h2>
         <p class="lead">短期验证需求，长期沉淀品牌、内容与自然流量资产。</p>
@@ -259,72 +261,32 @@
       </div>
     </section>
 
-    <section class="slide soft" data-title="套餐对照" role="region" aria-roledescription="slide" aria-label="第 7 页">
+    <section class="slide soft" data-title="价格与权益对比" role="region" aria-roledescription="slide" aria-label="第 7 页">
       <div class="frame">
-        <div class="top"><span class="brand">PACKAGE VIEW</span><span class="page">07 / 15</span></div>
-        <p class="kicker">最低门槛与年度获客保障</p>
-        <h2>平台会员最低 ¥31,100 / 年，EcomSeer ¥1,999 起先验证结果</h2>
-        <div class="package-grid">
-          <article class="package">
-            <span class="package-label">阿里巴巴国际站</span><h3>会员 + AI + 广告推广</h3>
-            <div class="price-stack">
-              <div class="price-line"><span>出口通 AI</span><strong>¥35,800 / 年</strong></div>
-              <div class="price-line"><span>金品诚企 AI</span><strong>¥90,000 / 年</strong></div>
-              <div class="price-line"><span>行业领袖</span><strong>官方询价</strong></div>
-              <div class="price-line"><span>OKKI Leads AI</span><strong>¥5,999 / 年</strong></div>
-              <div class="price-line"><span>直通车 / P4P</span><strong>常见预存 ¥10,000 起</strong></div>
-            </div>
-            <span class="promise">常规会员套餐无固定客户询盘保障；部分新商活动仅保障平台定义的“商机”，不等同客户询盘或订单。</span>
-          </article>
-          <article class="package">
-            <span class="package-label">中国制造网</span><h3>会员 + AI + 按次营销</h3>
-            <div class="price-stack">
-              <div class="price-line"><span>金牌会员</span><strong>¥31,100 / 年</strong></div>
-              <div class="price-line"><span>钻石会员</span><strong>¥59,800 / 年</strong></div>
-              <div class="price-line"><span>AI 麦可标准 / 专业 Lite</span><strong>¥5,980 / 年</strong></div>
-              <div class="price-line"><span>AI 麦可专业版</span><strong>¥9,980 / 年</strong></div>
-              <div class="price-line"><span>AI 速递</span><strong>¥0.3 / 次 · ¥300 起</strong></div>
-            </div>
-            <span class="promise">会员权益、AI 电量与推广资源可叠加购买；AI 速递按营销次数扣费，公开说明未承诺成交。</span>
-          </article>
-          <article class="package ecom">
-            <span class="package-label">EcomSeer</span><h3>企业情报 + Agent 主动获客</h3>
-            <div class="price-stack">
-              <div class="price-line"><span>试用版</span><strong>¥1,999 / 期</strong></div>
-              <div class="price-line"><span>年度获客版</span><strong>¥29,998 / 年</strong></div>
-              <div class="price-line"><span>年度询盘保障</span><strong>100 条 / 年</strong></div>
-              <div class="price-line"><span>进阶方案</span><strong>按市场与线索量配置</strong></div>
-            </div>
-            <ul><li>整合全网公开信息、海关数据等企业情报</li><li>AI Agent 主动寻找、触达、筛选目标客户</li><li>交付合格销售线索，客户与互动记录归企业</li></ul>
-            <span class="promise">年度获客版包含 100 条客户询盘保障；数量、周期与验收口径写入合同</span>
-          </article>
-        </div>
-        <p class="sources">公开信息核对：2026-08-04。会员价格据 2026 年 2 月研报（资料来源含两平台）及平台公开页；实际签约价、活动政策与适用条件以官方报价合同为准。来源：<a href="https://pdf.dfcfw.com/pdf/H3_AP202602131819911959_1.pdf%3F1770970596000.pdf" target="_blank" rel="noreferrer">2026 套餐对照</a>、<a href="https://supplier.alibaba.com/activity/new-member/PX002CQ5L.htm" target="_blank" rel="noreferrer">阿里会员档</a>、<a href="https://supplier.alibaba.com/us/news/PX002CA89.htm" target="_blank" rel="noreferrer">阿里商机保效</a>、<a href="https://supplier.alibaba.com/trade/domestic/PX002D14G.htm" target="_blank" rel="noreferrer">出口通 AI 与推广预存</a>、<a href="https://onetouch.alibaba.com/moBasedata/public/news/contentd1197b25-5187-4492-9a63-2a4ad473d8ed" target="_blank" rel="noreferrer">OKKI Leads 价格</a>、<a href="https://service.made-in-china.com/help/guide/mai/14567.htm" target="_blank" rel="noreferrer">AI 麦可购买指南</a>、<a href="https://service.made-in-china.com/help/guide/bank/8070.htm" target="_blank" rel="noreferrer">AI 速递计费</a>。</p>
-      </div>
-    </section>
-
-    <section class="slide" data-title="竞品对比" role="region" aria-roledescription="slide" aria-label="第 8 页">
-      <div class="frame">
-        <div class="top"><span class="brand">WHY ECOMSEER</span><span class="page">08 / 15</span></div>
+        <div class="top"><span class="brand">PRICE &amp; VALUE</span><span class="page">07 / 14</span></div>
         <p class="kicker">最低投入、结果保障与客户资产对比</p>
-        <h2>¥1,999 起验证获客，年度方案保障 100 条客户询盘</h2>
-        <div class="compare market">
-          <div class="head">对比维度</div><div class="head">阿里巴巴国际站</div><div class="head">中国制造网</div><div class="head ours">EcomSeer</div>
-          <div class="dimension">获客逻辑</div><div class="old">同类商家密集，共同竞争站内搜索、RFQ 与广告流量，询盘线索容易分散</div><div class="old">依靠展示、RFQ 与访客营销</div><div class="ours">AI Agent 主动寻找、触达并筛选目标买家</div>
-          <div class="dimension">数据基础</div><div class="old">平台企业、买家行为与站内数据</div><div class="old">平台买家、RFQ 与会员数据</div><div class="ours">整合全网公开信息、海关数据等企业情报级数据库</div>
-          <div class="dimension">结果承诺</div><div class="old">常规会员无固定客户询盘保障；部分活动仅保障平台定义的“商机”</div><div class="old">AI 速递按营销次数计费；公开权益未见固定成交承诺</div><div class="ours">年度获客版保障 100 条客户询盘 / 年，按合同口径验收</div>
-          <div class="dimension">最低投入</div><div class="old">出口通 AI ¥35,800 / 年；推广与增值工具另计</div><div class="old">金牌会员 ¥31,100 / 年；AI 与营销资源另计</div><div class="ours">试用版 ¥1,999 / 期；年度获客版 ¥29,998 / 年</div>
-          <div class="dimension">客户资产</div><div class="old">流量入口与互动主要依托平台店铺</div><div class="old">展示、RFQ 与买家资源主要在平台体系</div><div class="ours">独立站、客户库、互动与跟进记录归企业</div>
-          <div class="dimension">停止投入后</div><div class="old">会员 / 推广停止会影响站内搜索曝光与流量入口</div><div class="old">会员展示与推广权益会受到影响</div><div class="ours">已沉淀的客户、内容与销售数据可持续使用</div>
-          <div class="dimension">团队效率</div><div class="old">持续上品、优化、投放与人工跟进</div><div class="old">持续更新、RFQ 报价与访客运营</div><div class="ours">Agent 并行覆盖多市场、多语言，减少重复人力</div>
+        <h2>价格更低，权益更强：从试用验证到年度获客保障</h2>
+        <div class="pricing-summary" aria-label="年度投入对比">
+          <article class="pricing-stat"><small>某巴国际站</small><strong>¥35,800 起 / 年</strong><span>会员基础投入，广告推广与增值工具通常另计</span></article>
+          <article class="pricing-stat"><small>某制造网</small><strong>¥31,100 起 / 年</strong><span>会员基础投入，AI 与营销资源通常另计</span></article>
+          <article class="pricing-stat ours"><small>EcomSeer</small><strong>¥29,998 / 年</strong><span>试用版仅 ¥1,999 / 期</span><b class="advantage">年度保障 100 条客户询盘</b></article>
         </div>
-        <p class="sources">说明：平台“商机”、客户询盘、合格销售线索与订单不是同一口径；阿里保效适用商家及补偿方式以活动合同为准。平台实际效果因行业、产品、运营与投放而异；EcomSeer 年度获客版的 100 条客户询盘保障以双方合同约定的定义、周期与验收口径为准。</p>
+        <div class="compare market">
+          <div class="head">对比维度</div><div class="head">某巴国际站</div><div class="head">某制造网</div><div class="head ours">EcomSeer</div>
+          <div class="dimension">年度价格</div><div class="old">会员 ¥35,800 起，推广及增值工具另计</div><div class="old">会员 ¥31,100 起，AI 与营销资源另计</div><div class="ours">年度获客版 ¥29,998；试用仅 ¥1,999</div>
+          <div class="dimension">结果承诺</div><div class="old">常规会员无固定客户询盘保障；部分活动仅保障平台定义的“商机”</div><div class="old">AI 速递按营销次数计费；公开权益未见固定成交承诺</div><div class="ours">年度获客版保障 100 条客户询盘 / 年，按合同口径验收</div>
+          <div class="dimension">获客权益</div><div class="old">站内展示、RFQ、广告流量与增值工具</div><div class="old">会员展示、RFQ、访客营销与 AI 资源</div><div class="ours">企业情报、AI 主动获客、独立站增长、客户库与销售跟进数据</div>
+          <div class="dimension">获客方式</div><div class="old">同类商家竞争站内搜索、RFQ 与广告流量</div><div class="old">依靠展示、RFQ 与访客营销</div><div class="ours">AI Agent 主动寻找、触达并筛选目标买家</div>
+          <div class="dimension">客户资产</div><div class="old">流量入口与互动主要依托平台店铺</div><div class="old">展示、RFQ 与买家资源主要在平台体系</div><div class="ours">独立站、客户库、互动与跟进记录归企业</div>
+          <div class="dimension">停止投入后</div><div class="old">会员 / 推广停止会影响曝光与流量入口</div><div class="old">会员展示与推广权益会受到影响</div><div class="ours">已沉淀的客户、内容与销售数据仍可持续使用</div>
+        </div>
+        <p class="sources">说明：友商价格与权益依据公开资料整理，实际签约价和活动政策以其合同为准；EcomSeer 的 100 条客户询盘保障以双方合同约定的定义、周期与验收口径为准。</p>
       </div>
     </section>
 
-    <section class="slide soft" data-title="客户案例一" role="region" aria-roledescription="slide" aria-label="第 9 页">
+    <section class="slide soft" data-title="客户案例一" role="region" aria-roledescription="slide" aria-label="第 8 页">
       <div class="frame">
-        <div class="top"><span class="brand">CUSTOMER CASE 01</span><span class="page">09 / 15</span></div>
+        <div class="top"><span class="brand">CUSTOMER CASE 01</span><span class="page">08 / 14</span></div>
         <p class="kicker">某汽车零配件企业 · 独立站增长案例</p>
         <h2>独立站 SEO &amp; GEO 优化效果展示</h2>
         <p class="lead">自然搜索持续获得曝光与点击，优质内容同时被 AI 搜索平台发现与引用。</p>
@@ -343,9 +305,9 @@
       </div>
     </section>
 
-    <section class="slide soft" data-title="客户案例二" role="region" aria-roledescription="slide" aria-label="第 10 页">
+    <section class="slide soft" data-title="客户案例二" role="region" aria-roledescription="slide" aria-label="第 9 页">
       <div class="frame">
-        <div class="top"><span class="brand">CUSTOMER CASE 02</span><span class="page">10 / 15</span></div>
+        <div class="top"><span class="brand">CUSTOMER CASE 02</span><span class="page">09 / 14</span></div>
         <p class="kicker">精准邮件营销 · 真实采购询盘</p>
         <h2>精准触达目标买家，获得明确报价与供应商准入机会</h2>
         <p class="lead">海外客户直接给出采购数量、产品规格和图纸编号，并邀请企业参与大型集团供应商注册流程。</p>
@@ -378,9 +340,9 @@
       </div>
     </section>
 
-    <section class="slide" data-title="行业案例" role="region" aria-roledescription="slide" aria-label="第 11 页">
+    <section class="slide" data-title="行业案例" role="region" aria-roledescription="slide" aria-label="第 10 页">
       <div class="frame">
-        <div class="top"><span class="brand">CASES</span><span class="page">11 / 15</span></div>
+        <div class="top"><span class="brand">CASES</span><span class="page">10 / 14</span></div>
         <p class="kicker">跨行业可复制</p>
         <h2>汽车、小家电与汽配项目均在两周内形成商机</h2>
         <div class="case-grid">
@@ -392,9 +354,9 @@
       </div>
     </section>
 
-    <section class="slide dark" data-title="客户案例三" role="region" aria-roledescription="slide" aria-label="第 12 页">
+    <section class="slide dark" data-title="客户案例三" role="region" aria-roledescription="slide" aria-label="第 11 页">
       <div class="frame">
-        <div class="top"><span class="brand">CUSTOMER CASE 03</span><span class="page">12 / 15</span></div>
+        <div class="top"><span class="brand">CUSTOMER CASE 03</span><span class="page">11 / 14</span></div>
         <p class="kicker">平台推送客户 · 订单转化案例</p>
         <h2>平台推送精准客户，促成百万级订单</h2>
         <p class="lead">客户回访确认：平台推荐的买家质量高、采购意向足，并已完成百万级订单落地。</p>
@@ -420,9 +382,9 @@
       </div>
     </section>
 
-    <section class="slide" data-title="落地路径" role="region" aria-roledescription="slide" aria-label="第 13 页">
+    <section class="slide" data-title="落地路径" role="region" aria-roledescription="slide" aria-label="第 12 页">
       <div class="frame">
-        <div class="top"><span class="brand">DELIVERY</span><span class="page">13 / 15</span></div>
+        <div class="top"><span class="brand">DELIVERY</span><span class="page">12 / 14</span></div>
         <p class="kicker">90 天最小闭环</p>
         <h2>先验证一个重点市场，再打通多渠道增长闭环</h2>
         <p class="lead">从市场验证到全渠道承接，再把已经跑通的增长模型规模化复制。</p>
@@ -434,9 +396,9 @@
       </div>
     </section>
 
-    <section class="slide soft" data-title="创业团队" role="region" aria-roledescription="slide" aria-label="第 14 页">
+    <section class="slide soft" data-title="创业团队" role="region" aria-roledescription="slide" aria-label="第 13 页">
       <div class="frame">
-        <div class="top"><span class="brand">TEAM</span><span class="page">14 / 15</span></div>
+        <div class="top"><span class="brand">TEAM</span><span class="page">13 / 14</span></div>
         <p class="kicker">CORE TEAM · 阿里巴巴 / 字节跳动 / TikTok / 快手</p>
         <h2>曾构建百亿级平台，也曾亲历全球电商从 0 到 1</h2>
         <div class="team">
@@ -447,9 +409,9 @@
       </div>
     </section>
 
-    <section class="slide dark" data-title="合作交流" role="region" aria-roledescription="slide" aria-label="第 15 页">
+    <section class="slide dark" data-title="合作交流" role="region" aria-roledescription="slide" aria-label="第 14 页">
       <div class="frame">
-        <div class="top"><span class="brand">NEXT STEP</span><span class="page">15 / 15</span></div>
+        <div class="top"><span class="brand">NEXT STEP</span><span class="page">14 / 14</span></div>
         <div class="cta">
           <div><p class="kicker">从一个重点市场开始</p><h1>验证你的<br><span class="accent">海外增长机会</span></h1><p class="lead">市场与客户画像诊断 · 首轮渠道验证 · 90 天增长闭环方案</p></div>
           <aside class="cta-card contact-card">
@@ -467,7 +429,7 @@
   </div>
   <nav class="controls" aria-label="演示导航">
     <button id="prev" aria-label="上一页">←</button>
-    <button class="count" id="count" aria-label="进入或退出全屏">01 / 15</button>
+    <button class="count" id="count" aria-label="进入或退出全屏">01 / 14</button>
     <button id="next" aria-label="下一页">→</button>
   </nav>
   <div class="progress" aria-hidden="true"><i id="progress"></i></div>
