@@ -53,6 +53,7 @@
     .statement p{margin:0;font-size:clamp(20px,2.1vw,35px);line-height:1.38;font-weight:650}
     .outcomes{display:grid;gap:8%}.outcome{padding-bottom:7%;border-bottom:1px solid var(--line)}.outcome:last-child{border-bottom:0}
     .outcome span{color:var(--blue);font-weight:800}.outcome h3{margin:2% 0;font-size:clamp(18px,1.7vw,28px)}.outcome p{margin:0;color:var(--gray);font-size:clamp(12px,1.05vw,17px);line-height:1.55}
+    .pain-grid{flex:1;display:grid;grid-template-columns:repeat(4,1fr);gap:2.2%;align-items:center;margin-top:1%}.pain-card{min-height:62%;padding:7% 7.5%;border:1px solid #dedee3;border-radius:24px;background:var(--white);box-shadow:0 10px 30px rgba(0,0,0,.045)}.pain-card .num{font-size:clamp(30px,3.2vw,54px)}.pain-card:first-child{border-color:#ffd49a;background:#fff9ef}.pain-card:first-child .num{color:var(--orange)}.pain-card h3{margin:10% 0 6%;font-size:clamp(17px,1.55vw,26px);line-height:1.25}.pain-card p{margin:0;color:var(--gray);font-size:clamp(10px,.92vw,15px);line-height:1.6}
     .three{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:4%;align-items:center}
     .three article{min-height:58%;padding:0 5%;border-left:1px solid var(--line)}.three article:first-child{border-left:0;padding-left:0}
     .num{font-size:clamp(36px,4.4vw,72px);line-height:1;color:#b6b6bb;font-weight:750;font-variant-numeric:tabular-nums}.three article:first-child .num{color:var(--blue)}
@@ -122,6 +123,7 @@
       .statement,.system-copy,.lane,.platform-order,.cta-card{padding:24px;border-radius:22px}
       .statement p{font-size:24px}.statement b{font-size:13px}
       .outcomes{gap:0}.outcome{padding:22px 0}.outcome h3{font-size:22px}.outcome p{font-size:15px}
+      .pain-grid{grid-template-columns:1fr;gap:12px;margin-top:26px}.pain-card{min-height:0;padding:20px;border-radius:18px}.pain-card .num{font-size:38px}.pain-card h3{margin:8px 0 7px;font-size:22px}.pain-card p{font-size:14px}
       .three,.case-grid,.team,.package-grid,.roadmap{display:grid;grid-template-columns:1fr;gap:0;align-items:start;margin-top:24px}
       .three article,.case,.person,.package{min-height:0;padding:24px 0;border-left:0;border-top:1px solid var(--line)}
       .three article:first-child,.case:first-child,.person:first-child,.package:first-child{padding-top:0;border-top:0}
@@ -181,18 +183,19 @@
       </div>
     </section>
 
-    <section class="slide" data-title="我们是谁" role="region" aria-roledescription="slide" aria-label="第 2 页">
+    <section class="slide" data-title="为什么出海" role="region" aria-roledescription="slide" aria-label="第 2 页">
       <div class="frame">
-        <div class="top"><span class="brand">ABOUT</span><span class="page">02 / 14</span></div>
+        <div class="top"><span class="brand">WHY GLOBAL</span><span class="page">02 / 14</span></div>
         <div class="intro-grid">
           <div>
-            <p class="kicker">北京妙智盛科技 · EcomSeer</p>
-            <h2>我们做的不是工具集合，<br>而是一条<span class="accent">可复盘的获客链路</span></h2>
-            <p class="lead">EcomSeer 连接企业情报、独立站、内容、主动开发与销售结果，帮助企业持续获得高质量海外机会。</p>
+            <p class="kicker">制造企业为什么要做出海</p>
+            <h2>从国内存量竞争，<br>走向<span class="accent">全球增量市场</span></h2>
+            <p class="lead">出海不是多开一个销售渠道，而是打开新的客户、利润与增长空间，把中国制造能力转化为全球市场机会。</p>
           </div>
-          <div class="statement">
-            <b>客户最终获得</b>
-            <p>自有客户资产<br>合格销售线索（MQL）<br>可持续优化的数据闭环</p>
+          <div class="outcomes">
+            <article class="outcome"><span>01 · 增长空间</span><h3>突破单一市场的增长天花板</h3><p>面向更多国家、行业与采购场景，获得新的客户来源和订单机会。</p></article>
+            <article class="outcome"><span>02 · 利润空间</span><h3>从价格竞争走向价值竞争</h3><p>通过差异化产品、服务与品牌表达，争取更健康的议价空间。</p></article>
+            <article class="outcome"><span>03 · 经营韧性</span><h3>降低对单一渠道与市场的依赖</h3><p>建立更分散的客户结构，让企业增长拥有更多确定性和选择权。</p></article>
           </div>
         </div>
       </div>
@@ -201,14 +204,15 @@
     <section class="slide soft" data-title="客户问题" role="region" aria-roledescription="slide" aria-label="第 3 页">
       <div class="frame">
         <div class="top"><span class="brand">WHY NOW</span><span class="page">03 / 14</span></div>
-        <p class="kicker">海外增长的真实卡点</p>
-        <h2>企业缺的不是更多渠道，<br>而是把渠道变成结果的能力</h2>
-        <div class="three">
-          <article><div class="num">01</div><h3>客户找不到</h3><p>目标市场、采购角色和真实需求分散在搜索、社媒、邮件与 AI 推荐入口。</p></article>
-          <article><div class="num">02</div><h3>询盘筛不动</h3><p>重复账号、非目标客户和低意向回复消耗大量销售时间，真正商机容易被淹没。</p></article>
-          <article><div class="num">03</div><h3>数据连不起来</h3><p>广告、网站、内容与销售结果各自独立，预算和团队精力难以持续优化。</p></article>
+        <p class="kicker">企业出海的现实痛点</p>
+        <h2>渠道越铺越多、成本越投越高，<br>结果却很难持续沉淀</h2>
+        <div class="pain-grid">
+          <article class="pain-card"><div class="num">01</div><h3>获客成本高</h3><p>平台年费、广告、展会与人工持续叠加，前期投入重，获客效果却难预测。</p></article>
+          <article class="pain-card"><div class="num">02</div><h3>目标客户难找</h3><p>目标市场、采购角色和真实需求分散在搜索、社媒、邮件与 AI 推荐入口。</p></article>
+          <article class="pain-card"><div class="num">03</div><h3>销售人效偏低</h3><p>低意向询盘、多语种沟通和重复跟进消耗时间，真正商机容易被淹没。</p></article>
+          <article class="pain-card"><div class="num">04</div><h3>客户资产难沉淀</h3><p>广告、网站、内容与销售结果各自独立，预算和团队精力难以持续优化。</p></article>
         </div>
-        <div class="takeaway">EcomSeer 的价值：把“找客户、筛需求、交商机、做复盘”连成同一条增长链路。</div>
+        <div class="takeaway">真正的挑战不是“要不要出海”，而是如何更低成本、可衡量、可持续地获得海外客户。</div>
       </div>
     </section>
 
